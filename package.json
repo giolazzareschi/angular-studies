@@ -1,0 +1,21 @@
+{
+  "name": "catest",
+  "version": "0.0.1",
+  "main": "server.js",
+  "devDependencies": {
+    "express": "~4.0.0",
+    "grunt": "~0.4.4",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "jade": ">=0.0.1",
+    "lokijs": "^1.3.7",
+    "nodemailer": "~0.7.1",
+    "body-parser": "~1.0.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
