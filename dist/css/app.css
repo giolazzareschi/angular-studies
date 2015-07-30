@@ -9,3 +9,32 @@
 	font-style: normal;
 	list-style: none;
 }
+
+.btn-add-new-movie{
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.trucks-view-list{
+
+}
+
+.trucks-view-list tbody tr td{
+	vertical-align: middle;
+	text-align: center;
+}
+
+.trucks-view-list tbody tr th{
+	background-color: #eee;
+	color: #333;
+	font-weight: 600;
+	text-align: center;
+}
+
+.trucks-view-list img.thumb{
+	display: block;
+	width: auto;
+	height: 30px;
+	position: relative;	
+	margin: 0px auto;
+}

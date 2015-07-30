@@ -1,0 +1,25 @@
+<table class="table movietable">
+  <tr>
+    <td><h3>Details for {{truck.placa}}</h3></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Movie Title</td>
+    <td>{{truck.title}}</td>
+  </tr>
+  <tr>
+    <td>Director</td>
+    <td>{{truck.director}}</td>
+  </tr>
+  <tr>
+    <td>Release Year</td>
+    <td>{{truck.releaseYear}}</td>
+  </tr>
+  <tr>
+    <td>Movie Genre</td>
+    <td>{{truck.genre}}</td>
+  </tr>
+</table>
+<div>
+  <a class="btn btn-primary" ui-sref="editTruck({id:truck.$loki})">Edit</a>
+</div>

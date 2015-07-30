@@ -1,43 +1,44 @@
 /**
  * Created by Sandeep on 01/06/14.
  */
-angular.module('movieApp.controllers',[]).controller('MovieListController',function($scope,$state,popupService,$window,Movie){
+angular
+    .module('trucktrackerAPP.controllers',[])
+    .controller('TruckListController',function($scope,$state,popupService,$window,Truck){
+    
+    $scope.trucks=Truck.query();
 
-    $scope.movies=Movie.query();
-
-    $scope.deleteMovie=function(movie){
+    $scope.deleteTruck=function(truck){
         if(popupService.showPopup('Really delete this?')){
-            movie.$delete(function(){
-                $window.location.href='';
+            truck.$delete({ id : truck.$loki }, function(){
+                window.location.href="";
             });
         }
     }
 
-}).controller('MovieViewController',function($scope,$stateParams,Movie){
+}).controller('TruckViewController',function($scope,$stateParams,Truck){
 
-    $scope.movie=Movie.get({id:$stateParams.id});
+    $scope.truck=Truck.get({id:$stateParams.id});
 
-}).controller('MovieCreateController',function($scope,$state,$stateParams,Movie){
+}).controller('TruckCreateController',function($scope,$state,$stateParams,Truck){
 
-    $scope.movie=new Movie();
-
-    $scope.addMovie=function(){
-        $scope.movie.$save(function(){
-            $state.go('movies');
+    $scope.truck=new Truck();
+    $scope.addTruck=function(){        
+        $scope.truck.$save(function(){
+            $state.go('trucks');
         });
     }
 
-}).controller('MovieEditController',function($scope,$state,$stateParams,Movie){
+}).controller('TruckEditController',function($scope,$state,$stateParams,Truck){
 
-    $scope.updateMovie=function(){
-        $scope.movie.$update(function(){
-            $state.go('movies');
+    $scope.updateTruck=function(){
+        $scope.truck.$update(function(){
+            $state.go('trucks');
         });
     };
 
-    $scope.loadMovie=function(){
-        $scope.movie=Movie.get({id:$stateParams.id});
+    $scope.loadTruck=function(){
+        $scope.truck=Truck.get({id:$stateParams.id});
     };
 
-    $scope.loadMovie();
+    $scope.loadTruck();
 });

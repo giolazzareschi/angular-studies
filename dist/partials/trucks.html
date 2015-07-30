@@ -1,0 +1,24 @@
+<a ui-sref="newTruck" class="btn-primary btn-lg nodecoration btn-add-new-movie">New Truck</a>
+ 
+<h3>All Trucks</h3>
+<table class="table trucks-view-list">
+  <tr>
+    <th>Combustível</th>
+    <th>Imagem</th>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th>Placa</th>
+    <th>Actions</th>
+  </tr>
+  <tr ng-repeat="truck in trucks">
+    <td>{{truck.combustivel}}</td>
+    <td><img ng-src="{{truck.imagem | urlDencode}}" class="thumb" err-src="http://icons.iconarchive.com/icons/iron-devil/ids-3d-icons-20/32/Truck-icon.png" /></td>
+    <td>{{truck.marca}}</td>
+    <td>{{truck.modelo}}</td>
+    <td>{{truck.placa}}</td>
+    <td>
+      <a class="btn btn-primary" ui-sref="viewTruck({id:truck.$loki})">View</a>
+      <a class="btn btn-danger"  ng-click="deleteTruck(truck)">Delete</a>
+    </td>
+  </tr>
+</table>
